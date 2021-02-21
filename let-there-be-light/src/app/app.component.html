@@ -1,14 +1,14 @@
 <nav>
-  <div fxLayoutGap="80px">
-    <a class="nav-item nav-link" routerLink="/">Home</a>
-    <a class="nav-item nav-link" routerLink="/contact-us">cont</a>
-    <a class="nav-item nav-link" routerLink="/activities">act</a>
-
-    <button mat-button [matMenuTriggerFor]="belowMenu">Below</button>
+  <div fxLayoutGap="80px" class=parent>
+    <a mat-button class="nav-item nav-link" routerLink="/">Home</a>
+    <button mat-button [matMenuTriggerFor]="belowMenu">Activities</button>
+    <a mat-button class="nav-item nav-link" routerLink="/contact-us">FAQ</a>
+    <button mat-button>Help</button>
+    
     <mat-menu #belowMenu="matMenu" yPosition="below">
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-      <a mat-button routerLink="/activities" target="_blank">Link</a>
+      <a mat-button routerLink="/activities" target="_blank">Coffee Maker</a>
+      <button mat-menu-item>Door</button>
+      <button mat-menu-item>Microwave</button>
     </mat-menu>
   </div>
 </nav>
