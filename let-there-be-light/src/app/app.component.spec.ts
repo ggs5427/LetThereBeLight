@@ -5,6 +5,9 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { ActivitiesComponent } from './activities/activities.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -14,10 +17,13 @@ describe('AppComponent', () => {
         MatMenuModule,
         MatTabsModule,
         MatFormFieldModule,
-        MatSelectModule
+        MatSelectModule,
+        MatInputModule,
+        ReactiveFormsModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        ActivitiesComponent
       ],
     }).compileComponents();
   });

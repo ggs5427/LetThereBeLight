@@ -10,10 +10,13 @@ import { ActivitiesComponent } from './activities/activities.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ActivitiesComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,9 @@ import { MatSelectModule } from '@angular/material/select';
     MatMenuModule,
     MatTabsModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatInputModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
