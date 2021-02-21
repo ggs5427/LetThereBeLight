@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  coffeeLink = '/activities'
   title = 'let-there-be-light';
 }
