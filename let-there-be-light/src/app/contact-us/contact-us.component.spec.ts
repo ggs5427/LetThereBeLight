@@ -1,25 +1,19 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { createComponentFactory, mockProvider, Spectator } from '@ngneat/spectator';
+import { MockComponents, MockDirectives } from 'ng-mocks';
 import { ContactUsComponent } from './contact-us.component';
 
 describe('ContactUsComponent', () => {
-  let component: ContactUsComponent;
-  let fixture: ComponentFixture<ContactUsComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ContactUsComponent ]
-    })
-    .compileComponents();
+  let spectator: Spectator<ContactUsComponent>;
+  const createComponent = createComponentFactory({
+    component: ContactUsComponent,
+    providers: [],
+    imports: []
+    
   });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ContactUsComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  beforeEach(() => (spectator = createComponent()));
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(spectator.component).toBeTruthy();
   });
 });

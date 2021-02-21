@@ -6,20 +6,21 @@ import { HomePageComponent } from './home-page/home-page.component';
 
 const routes: Routes = [
   {path:'', 
-  component: HomePageComponent,
-  children: [
+  component: HomePageComponent},
+
     {
       path:'contact-us', 
-      component: ContactUsComponent},
+      data: {title: ''},
+      component: ContactUsComponent
+    },
     {
       path:'activities', 
       data: {title:''}, 
       //loadChildren: () => import ('./activities/activities.module').then((m) => m.ActivitiesModule)
       component: ActivitiesComponent
     }
-  ]
-  },
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

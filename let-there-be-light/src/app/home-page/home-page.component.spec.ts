@@ -1,25 +1,19 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { createComponentFactory, mockProvider, Spectator } from '@ngneat/spectator';
+import { MockComponents, MockDirectives } from 'ng-mocks';
 import { HomePageComponent } from './home-page.component';
 
 describe('HomePageComponent', () => {
-  let component: HomePageComponent;
-  let fixture: ComponentFixture<HomePageComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ HomePageComponent ]
-    })
-    .compileComponents();
+  let spectator: Spectator<HomePageComponent>;
+  const createComponent = createComponentFactory({
+    component: HomePageComponent,
+    providers: [],
+    imports: []
+    
   });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(HomePageComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  beforeEach(() => (spectator = createComponent()));
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(spectator.component).toBeTruthy();
   });
 });
