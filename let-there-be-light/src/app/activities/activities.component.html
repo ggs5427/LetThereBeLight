@@ -1,14 +1,14 @@
 <div class="act" fxLayout="column" fxLayoutGap="20px">
     <br>
-    <form>
+    <form [formGroup]="coffeeForm" (ngSubmit)="onSubmit()">
         <div fxLayout="row">
             <img src="../assets/Untitled-Artwork.gif">
             <div class="top">
                 <mat-form-field>
                     <mat-label>When</mat-label>
-                    <mat-select>
-                        <mat-option value="one">Now</mat-option>
-                        <mat-option value="two">Later</mat-option>
+                    <mat-select formControlName="when">
+                        <mat-option value="now">Now</mat-option>
+                        <mat-option value="later">Later</mat-option>
                     </mat-select>
                 </mat-form-field>
             </div>
@@ -17,17 +17,17 @@
             <img src="../assets/set.GIF">
             <div class="top2" fxLayoutGap="55px">
                 <mat-form-field appearance="fill">
-                    <input matInput type="number" placeholder="Ex. 2" [formControl]="hour">
+                    <input matInput type="number" placeholder="Ex. 2" formControlName="hour">
                     <span matSuffix>Hrs</span>
                 </mat-form-field>
                 <mat-form-field appearance="fill">
-                    <input matInput type="number" placeholder="Ex. 30" [formControl]="minute">
+                    <input matInput type="number" placeholder="Ex. 30" formControlName="minute">
                     <span matSuffix>Min</span>
                 </mat-form-field>
             </div>
         </div>
+        <button mat-button type="submit">Done</button>
     </form>
-    <button mat-button>Done</button>
     <img src="../assets/Untitled-Artwork.png" width="1400" height="500">
     <br>
 </div>
