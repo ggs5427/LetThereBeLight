@@ -6,4 +6,11 @@ function makeMQTTRequest(when, minute, hours) {
       client.publish('coffee/state', 'state = ON')
     })
   }
+  else {
+    var currentTime = new Date().getTime() / 1000;
+    var targetTime = currentTime + minute * 60 + hours * 60 * 60;
+    client.on('connect', function() {
+      client.publish('coffee/time', 'time = ' + targetTime);
+    })
+  }
 }
